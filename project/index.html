@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-book-reader"></i>
+            <span>LibraryMS</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" data-section="dashboard">Dashboard</a></li>
+            <li><a href="#" data-section="books">Books</a></li>
+            <li><a href="#" data-section="online-books">Online Books</a></li>
+            <li><a href="#" data-section="members">Members</a></li>
+            <li><a href="#" data-section="transactions">Transactions</a></li>
+            <li><a href="#" data-section="payments">Payments</a></li>
+        </ul>
+        <div class="user-menu">
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <span id="userName"></span>
+            <button id="logoutBtn" class="btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <h2>Dashboard</h2>
+            
+            <!-- New Books Promotion Section -->
+            <div class="new-books-promo">
+                <div class="promo-header">
+                    <h3><i class="fas fa-star"></i> Newly Launched Books</h3>
+                    <div class="promo-controls">
+                        <button class="promo-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="promo-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="promo-slider">
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">New Release</div>
+                            <img src="https://picsum.photos/seed/new1/200/300" alt="New Book 1">
+                            <div class="promo-book-info">
+                                <h4>AI Revolution 2024</h4>
+                                <p class="author">By Dr. Sarah Chen</p>
+                                <p class="price">$24.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">Bestseller</div>
+                            <img src="https://picsum.photos/seed/new2/200/300" alt="New Book 2">
+                            <div class="promo-book-info">
+                                <h4>Future of Technology</h4>
+                                <p class="author">By John Smith</p>
+                                <p class="price">$19.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">Trending</div>
+                            <img src="https://picsum.photos/seed/new3/200/300" alt="New Book 3">
+                            <div class="promo-book-info">
+                                <h4>Digital Marketing 2024</h4>
+                                <p class="author">By David Wilson</p>
+                                <p class="price">$22.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">New Release</div>
+                            <img src="https://picsum.photos/seed/new4/200/300" alt="New Book 4">
+                            <div class="promo-book-info">
+                                <h4>Quantum Computing Basics</h4>
+                                <p class="author">By Dr. Michael Brown</p>
+                                <p class="price">$27.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">Hot</div>
+                            <img src="https://picsum.photos/seed/new5/200/300" alt="New Book 5">
+                            <div class="promo-book-info">
+                                <h4>Blockchain Technology</h4>
+                                <p class="author">By Sarah Johnson</p>
+                                <p class="price">$25.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">Featured</div>
+                            <img src="https://picsum.photos/seed/new6/200/300" alt="New Book 6">
+                            <div class="promo-book-info">
+                                <h4>Web Development 2024</h4>
+                                <p class="author">By Alex Thompson</p>
+                                <p class="price">$23.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">New Release</div>
+                            <img src="https://picsum.photos/seed/new7/200/300" alt="New Book 7">
+                            <div class="promo-book-info">
+                                <h4>Data Science Essentials</h4>
+                                <p class="author">By Dr. Lisa Chen</p>
+                                <p class="price">$26.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-slide">
+                        <div class="promo-book">
+                            <div class="promo-badge">Popular</div>
+                            <img src="https://picsum.photos/seed/new8/200/300" alt="New Book 8">
+                            <div class="promo-book-info">
+                                <h4>Cloud Computing Guide</h4>
+                                <p class="author">By Robert Martinez</p>
+                                <p class="price">$24.99</p>
+                                <button class="btn primary">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Total Books</h3>
+                    <p id="totalBooks">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Members</h3>
+                    <p id="totalMembers">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Loans</h3>
+                    <p id="activeLoans">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Overdue Books</h3>
+                    <p id="overdueBooks">0</p>
+                </div>
+            </div>
+
+            <!-- Add Chatbot Section -->
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <h3>Library Assistant</h3>
+                    <button class="minimize-btn" id="minimizeChatbot">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="message bot">
+                        <div class="message-content">
+                            Hello! I'm your library assistant. How can I help you today?
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="chatbotInput" placeholder="Type your message...">
+                    <button id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add Chatbot Toggle Button -->
+            <button class="chatbot-toggle" id="chatbotToggle">
+                <i class="fas fa-comments"></i>
+            </button>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books" class="section">
+            <h2>Books Management</h2>
+            <div class="action-bar">
+                <button id="addBookBtn" class="btn primary"><i class="fas fa-plus"></i> Add New Book</button>
+                <div class="search-box">
+                    <input type="text" id="searchBooks" placeholder="Search books...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="booksTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>ISBN</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booksTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Online Books Section -->
+        <section id="online-books" class="section">
+            <h2>Online Books</h2>
+            <div class="action-bar">
+                <div class="search-box">
+                    <input type="text" id="searchOnlineBooks" placeholder="Search online books...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-options">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Business">Business</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="Science">Science</option>
+                        <option value="History">History</option>
+                        <option value="Philosophy">Philosophy</option>
+                        <option value="Psychology">Psychology</option>
+                        <option value="Health">Health</option>
+                        <option value="Art">Art</option>
+                        <option value="Music">Music</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="">All Prices</option>
+                        <option value="0-10">$0 - $10</option>
+                        <option value="10-20">$10 - $20</option>
+                        <option value="20+">$20+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="online-books-grid" id="onlineBooksGrid">
+                <!-- Books will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Members Section -->
+        <section id="members" class="section">
+            <h2>Members Management</h2>
+            <div class="action-bar">
+                <button id="addMemberBtn" class="btn primary"><i class="fas fa-plus"></i> Add New Member</button>
+                <div class="search-box">
+                    <input type="text" id="searchMembers" placeholder="Search members...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="membersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="membersTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Transactions Section -->
+        <section id="transactions" class="section">
+            <h2>Transactions</h2>
+            <div class="action-bar">
+                <button id="newTransactionBtn" class="btn primary"><i class="fas fa-plus"></i> New Transaction</button>
+                <div class="search-box">
+                    <input type="text" id="searchTransactions" placeholder="Search transactions...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book</th>
+                            <th>Member</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Payments Section -->
+        <section id="payments" class="section">
+            <h2>Payments Management</h2>
+            <div class="action-bar">
+                <button id="newPaymentBtn" class="btn primary"><i class="fas fa-plus"></i> New Payment</button>
+                <div class="search-box">
+                    <input type="text" id="searchPayments" placeholder="Search payments...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="paymentsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Member</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Templates -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Book Preview Modal -->
+    <div id="bookPreviewModal" class="modal">
+        <div class="modal-content book-preview">
+            <span class="close">&times;</span>
+            <div class="book-preview-content">
+                <div class="book-cover">
+                    <img id="previewBookCover" src="" alt="Book Cover">
+                </div>
+                <div class="book-details">
+                    <h2 id="previewBookTitle"></h2>
+                    <p class="author" id="previewBookAuthor"></p>
+                    <p class="price" id="previewBookPrice"></p>
+                    <p class="description" id="previewBookDescription"></p>
+                    <div class="book-actions">
+                        <button id="purchaseBookBtn" class="btn primary">Purchase</button>
+                        <button id="readSampleBtn" class="btn">Read Sample</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Modal -->
+    <div id="readingModal" class="modal">
+        <div class="modal-content reading-view">
+            <span class="close">&times;</span>
+            <div class="reading-controls">
+                <button id="prevPage" class="btn"><i class="fas fa-chevron-left"></i></button>
+                <span id="pageNumber">Page 1</span>
+                <button id="nextPage" class="btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="reading-content" id="readingContent">
+                <!-- Book content will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-view">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <div class="cart-actions">
+                    <button id="clearCartBtn" class="btn">Clear Cart</button>
+                    <button id="checkoutBtn" class="btn primary">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-view">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            
+            <!-- Payment Gateway Section -->
+            <div class="payment-gateway">
+                <div class="payment-tabs">
+                    <button class="payment-tab active" data-form="cardForm">
+                        <i class="fas fa-credit-card"></i>
+                        Card Payment
+                    </button>
+                    <button class="payment-tab" data-form="upiForm">
+                        <i class="fas fa-mobile-alt"></i>
+                        UPI
+                    </button>
+                    <button class="payment-tab" data-form="qrForm">
+                        <i class="fas fa-qrcode"></i>
+                        Scan QR
+                    </button>
+                </div>
+
+                <!-- Card Payment Form -->
+                <div class="payment-form active" id="cardForm">
+                    <div class="card-types">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="Amex">
+                    </div>
+                    <form id="cardPaymentForm">
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" id="cardName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <div class="card-input-group">
+                                <input type="text" id="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" required>
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <div class="cvv-input-group">
+                                    <input type="password" id="cvv" maxlength="3" placeholder="123" required>
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="billingAddress">Billing Address</label>
+                            <textarea id="billingAddress" required></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- UPI Payment Form -->
+                <div class="payment-form" id="upiForm">
+                    <div class="upi-section">
+                        <div class="form-group">
+                            <label for="upiId">Enter UPI ID</label>
+                            <input type="text" id="upiId" placeholder="example@upi" required>
+                        </div>
+                        <div class="upi-apps">
+                            <button type="button" class="upi-app-btn" data-upi="example@okaxis">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Google_Pay_Logo.svg/1200px-Google_Pay_Logo.svg.png" alt="Google Pay">
+                                <span>Google Pay</span>
+                            </button>
+                            <button type="button" class="upi-app-btn" data-upi="example@ybl">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/PhonePe_Logo.svg/1200px-PhonePe_Logo.svg.png" alt="PhonePe">
+                                <span>PhonePe</span>
+                            </button>
+                            <button type="button" class="upi-app-btn" data-upi="example@paytm">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Paytm_Logo_%28standalone%29.svg/1200px-Paytm_Logo_%28standalone%29.svg.png" alt="Paytm">
+                                <span>Paytm</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Payment Form -->
+                <div class="payment-form" id="qrForm">
+                    <div class="qr-section">
+                        <div class="qr-code">
+                            <img id="qrCode" src="" alt="Payment QR Code">
+                        </div>
+                        <div class="qr-instructions">
+                            <h3>Scan to Pay</h3>
+                            <p>1. Open any UPI app on your phone</p>
+                            <p>2. Scan this QR code</p>
+                            <p>3. Verify the amount and pay</p>
+                        </div>
+                        <div class="qr-amount">
+                            <span>Amount to Pay:</span>
+                            <span id="qrAmount">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <div id="checkoutItems"></div>
+                <div class="checkout-total">
+                    <span>Total Amount:</span>
+                    <span id="checkoutTotal">$0.00</span>
+                </div>
+            </div>
+
+            <!-- Payment Button -->
+            <button type="submit" class="btn primary payment-btn" id="paymentBtn">
+                <i class="fas fa-lock"></i>
+                Pay Securely
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!currentUser) {
+            window.location.href = 'login.html';
+        }
+
+        // Display user name
+        document.getElementById('userName').textContent = currentUser.name;
+
+        // Handle logout
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 
